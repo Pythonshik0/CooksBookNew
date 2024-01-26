@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рецепты без использования продукта и его содержимое < 10 грамм</title>
+</head>
+<body>
+    <h1>Рецепты без {{ product.name }}</h1>
+    {% if recipes %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            {% for recipe in recipes %}
+            <tr>
+                <td>{{ recipe.id }}</td>
+                <td>{{ recipe.name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Не найдено рецептов без {{ product.name }} или в количестве менее 10 граммов.</p>
+    {% endif %}
+</body>
+</html>

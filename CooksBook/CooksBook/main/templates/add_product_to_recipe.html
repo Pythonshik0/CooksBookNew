@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product to Recipe</title>
+</head>
+<body>
+    <form method="post" action="{% url 'add_product_to_recipe' %}">
+        {% csrf_token %}
+        Recipe ID: <input type="text" name="recipe_id"><br>
+        Product ID: <input type="text" name="product_id"><br>
+        Weight: <input type="text" name="weight"><br>
+        <input type="submit" value="Add Product to Recipe">
+    </form>
+</body>
+</html>
